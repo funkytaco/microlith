@@ -1,0 +1,6 @@
+[submodule "php-mvc"]
+	path = php-mvc
+	url = https://github.com/funkytaco/php-mvc.git
+[submodule "php-soa"]
+	path = php-soa
+	url = https://github.com/funkytaco/php-soa.git

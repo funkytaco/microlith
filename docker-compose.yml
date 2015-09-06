@@ -1,0 +1,22 @@
+php-mvc:
+  extends:
+    file: ./php-mvc/docker-compose.yml
+    service: php-mvc
+  volumes:
+    - ./php-mvc/:/opt/
+  working_dir: /opt/
+  command: ["supervisord", "-n"]
+  ports:
+    - "80:8000"
+  links:
+    - php-soa
+php-soa:
+  image: centos:7
+  volumes:
+    - ./dashboard/:/app/
+  working_dir: /app/
+  command: npm start
+  ports:
+    - "8001:8001"
+  links:
+    - php-mvc
